@@ -142,6 +142,17 @@ def do_graph_set(pdf, df, graph_fn, zones, page_title, ymax):
         setup_axies(ax, ymax)
         ax.set_title(f'{zone}')
 
+        # Inbound 13/13A/P&R rerouted via Wort's Causeway from 2019-09-06
+        if (zone == 'babraham_road_in' and
+           graph_fn == day_scatter_graph and
+           '07:00' in page_title):
+            left, right = ax.get_xlim()
+            start = matplotlib.dates.date2num(date(2019, 9, 6))
+            ax.axvspan(start, right, facecolor='k', alpha=0.1, zorder=1)
+            ax.annotate('Buses rerouted\ndata missing',
+                        xy=((start+right)/2, 0.5), xycoords=('data', 'axes fraction'),
+                        ha='center')
+
         if col == 0:
             axs_list[row, col].set(ylabel='Journey time (minutes)')
 

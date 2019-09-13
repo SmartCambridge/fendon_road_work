@@ -8,18 +8,18 @@ from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
 ZONES = [
-         'cherry_hinton_road_in',
-         'cherry_hinton_road_out',
-         'hills_road_inner_in',
-         'hills_road_inner_out',
-         'perne_road_south',
-         'perne_road_north',
-         'hills_road_outer_in',
-         'hills_road_outer_out',
          'babraham_road_in',
          'babraham_road_out',
+         'cherry_hinton_road_in',
+         'cherry_hinton_road_out',
          'cherry_hinton_road_outer_in',
          'cherry_hinton_road_outer_out',
+         'hills_road_inner_in',
+         'hills_road_inner_out',
+         'hills_road_outer_in',
+         'hills_road_outer_out',
+         'perne_road_north',
+         'perne_road_south',
          ]
 
 
@@ -35,7 +35,7 @@ def run():
 
         for between in (('07:00', '09:00'), ('16:00', '18:00')):
 
-            title = f'Journey times, Mon-Fri, {between[0]}-{between[1]}'
+            title = f'Journey Times, Mon-Fri, {between[0]}-{between[1]}'
 
             do_graph_set(pdf, df.between_time(*between).copy(), day_scatter_graph, ZONES, title, 40)
 
