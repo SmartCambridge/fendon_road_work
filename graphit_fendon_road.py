@@ -29,6 +29,7 @@ def run():
 
     df = get_traffic_data()
     df = df[df.index.dayofweek < 5]
+    df = df[df.Duration < 7200]           # Some insane jounrey times
     df = df['2019-08-01':]
 
     with PdfPages('journey_time_fendon_road_area_BUS.pdf') as pdf:
