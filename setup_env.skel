@@ -1,0 +1,14 @@
+# Edit this file, providing a Smart Cambridge API token
+# as the value of API_TOKEN (below) and save it as setup_env.
+# Source this before running doenload.py.
+
+
+# Set API_TOKEN to a SmartCambridge API token valid for the server
+# selected by the API_SCHEMA variable below or the default of
+# https://smartcambridge.org/api/docs/
+
+export API_TOKEN=
+
+# Enable virtual env
+
+. venv/bin/activate
