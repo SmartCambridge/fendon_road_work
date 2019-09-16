@@ -31,6 +31,7 @@ def run():
     df = df[df.index.dayofweek < 5]
     df = df[df.Duration < 7200]           # Some insane jounrey times
     df = df['2019-08-01':]
+    df = df.sort_index()
 
     with PdfPages('journey_time_fendon_road_area_BUS.pdf') as pdf:
 
@@ -40,8 +41,11 @@ def run():
 
             do_graph_set(pdf, df.between_time(*between).copy(), day_scatter_graph, ZONES, title, 40)
 
-        title = 'Average journey times, Mon-Fri'
-        do_graph_set(pdf, df, hourly_average, ZONES, title, 25)
+        title = 'Average journey times, Mon-Fri, 2019-08-01 to 2019-09-08'
+        do_graph_set(pdf, df[:'2019-09-08'].copy(), hourly_average, ZONES, title, 15)
+
+        title = 'Average journey times, Mon-Fri, 2019-09-09 onward'
+        do_graph_set(pdf, df['2019-09-09':].copy(), hourly_average, ZONES, title, 15)
 
 
 if __name__ == '__main__':
