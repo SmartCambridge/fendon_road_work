@@ -36,10 +36,10 @@ def hilight_events(ax, y):
     label_event(ax, 'Mill Road bridge reopened', '2019-08-24', y)
 
     ax.axvline(x='2019-09-04', linestyle='--')
-    label_event(ax, 'School term starts', '2019-09-04', y-2.5)
+    label_event(ax, 'School term started', '2019-09-04', y-2.5)
 
     ax.axvline(x='2019-09-09', linestyle='--')
-    label_event(ax, 'Fendon road work starts', '2019-09-09', y-5)
+    label_event(ax, 'Fendon road work started', '2019-09-09', y-5)
 
 
 def day_scatter_graph(ax, df, zone, ymax):
