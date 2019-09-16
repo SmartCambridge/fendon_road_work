@@ -1,3 +1,5 @@
 venv/
 setup_env
 __pycache__
+.ipynb_checkpoints/
+Untitled.ipynb
